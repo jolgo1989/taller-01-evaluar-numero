@@ -7,5 +7,9 @@ def evaluar_numero(numero: int) -> str:
     - 'negativo' si el número es menor a cero.
     - 'cero' si el número es igual a cero.
     """
-    # Escribe tu código aquí
-    pass
+    if numero > 0:
+        return "positivo"
+    elif numero < 0:
+        return "negativo"
+    else:
+        return "cero"
