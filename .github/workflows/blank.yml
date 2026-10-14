@@ -7,15 +7,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Copiar código del estudiante
+    - name: Copiar codigo del estudiante
       uses: actions/checkout@v4
 
     - name: Descargar tests ocultos del profesor
       uses: actions/checkout@v4
       with:
-        repository: 'jolgo1989/algoritmos-tests-privados' # Cambia TU-USUARIO por tu usuario de GitHub
+        repository: 'jolgo1989/algoritmos-tests-privados'
         token: ${{ secrets.PROFESOR_TOKEN }}
-        sparse-checkout: 'evaluacion_numero'
         path: 'tests_ocultos'
 
     - name: Configurar Python
@@ -30,4 +29,4 @@ jobs:
 
     - name: Ejecutar pruebas
       run: |
-        pytest tests/ tests_ocultos/evaluacion_numero/ -v
+        pytest tests/ tests_ocultos/ -v
